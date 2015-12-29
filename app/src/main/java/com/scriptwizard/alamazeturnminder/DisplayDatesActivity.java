@@ -42,7 +42,7 @@ public class DisplayDatesActivity extends AppCompatActivity {
                                                  if (networkInfo != null && networkInfo.isConnected()) {
                                                      new InfoGetterTask(me,text).execute();
                                                  } else {
-                                                     text.setText("No network connection available.");
+                                                     text.setText(getString(R.string.no_network_connection));
                                                  }
 
                                              }

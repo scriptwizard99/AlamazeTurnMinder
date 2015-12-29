@@ -4,4 +4,5 @@
     <string name="title_activity_display_dates">DisplayDatesActivity</string>
     <string name="orders_url">http://fallofromegame.com/alamazeorders/orders</string>
     <string name="results_url">http://fallofromegame.com/alamazeorders/results</string>
+    <string name="no_network_connection">No network connection available.</string>
 </resources>

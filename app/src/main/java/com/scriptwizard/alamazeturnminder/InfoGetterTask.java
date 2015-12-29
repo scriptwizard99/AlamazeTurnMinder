@@ -35,26 +35,12 @@ public class InfoGetterTask extends AsyncTask<String, Void, String> {
         pg = new PageGetter(mContext);
 
         try {
-           /* String url = "http://fallofromegame.com/alamazeorders/orders/189_TR.T12";
-            outString.append("Fetching Stuff from "+ url+"\n");
-            //outString.append( pg.downloadUrl(url) );
-            url = "http://fallofromegame.com/alamazeorders/orders/189_TR.T13";
-            outString.append("Fetching Stuff from "+ url+"\n");
-            //utString.append( pg.downloadUrl(url) );
-            outString.append("\ndone.\n");
-
-            String[] dueDate = getDueDate("189", "TR", "12");
-            int numOrders = getNumOrders("189", "TR", "12");
-
-            outString.append("due:["+dueDate[0]+"]\n");
-            outString.append("inf:["+dueDate[1]+"]\n");
-            outString.append("numO:["+numOrders+"]\n\n\n");*/
-
             outString.append("\nGathering information from the Alamaze site...\n\n");
             outString.append("Game Kingdom Turn Orders Influence DueDate\n");
-            String info = getInfo("189", "TR");
-            outString.append(String.format("%4s   %2s     %s", "189", "TR", info));
-            //outString.append(info);
+            outString.append( getGameInfo("189", "TR"));
+            outString.append( getGameInfo("190", "GN"));
+            outString.append( getGameInfo("193", "GN"));
+
         } catch (IOException e) {
             e.printStackTrace();
             outString.append("Caught Exception: "+e.getMessage());
@@ -64,6 +50,10 @@ public class InfoGetterTask extends AsyncTask<String, Void, String> {
         return outString.toString();
     } // end doInBackground
 
+    private String getGameInfo(String game, String kingdom) throws IOException {
+        String info=getInfo(game,kingdom);
+        return String.format("%4s   %2s     %s", game, kingdom, info);
+    }
 
     // onPostExecute displays the results of the AsyncTask.
     @Override
