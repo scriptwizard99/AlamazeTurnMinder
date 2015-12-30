@@ -26,6 +26,7 @@ public class DisplayDatesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_dates);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         text = (TextView) findViewById(R.id.displayDatesTextView);
         refreshButton = (Button) findViewById(R.id.refreshDatesButton);
@@ -33,26 +34,24 @@ public class DisplayDatesActivity extends AppCompatActivity {
 
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
-                                             @Override
-                                             public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-                                                 ConnectivityManager connMgr = (ConnectivityManager)
-                                                         getSystemService(Context.CONNECTIVITY_SERVICE);
-                                                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-                                                 if (networkInfo != null && networkInfo.isConnected()) {
-                                                     new InfoGetterTask(me,text).execute();
-                                                 } else {
-                                                     text.setText(getString(R.string.no_network_connection));
-                                                 }
+                ConnectivityManager connMgr = (ConnectivityManager)
+                        getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+                if (networkInfo != null && networkInfo.isConnected()) {
+                    new InfoGetterTask(me, text).execute();
+                } else {
+                    text.setText(getString(R.string.no_network_connection));
+                }
 
-                                             }
+            }
+        }); // end setOnClickListener
 
-
-                                         });
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+    } // end onCreate
 
 
 
 
-} // end class DisplayDatesActivity
+    } // end class DisplayDatesActivity

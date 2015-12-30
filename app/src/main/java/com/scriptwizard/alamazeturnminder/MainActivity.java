@@ -3,29 +3,18 @@ package com.scriptwizard.alamazeturnminder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button button;
+    private Button dueDatesButton;
+    private Button loginButton;
     private Context me;
 
     @Override
@@ -36,9 +25,19 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         me = this;
-        button = (Button) findViewById(R.id.mainButton);
+        loginButton = (Button) findViewById(R.id.refreshGamesButton);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(me, OCLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dueDatesButton = (Button) findViewById(R.id.getDueDatesButton);
+
+        dueDatesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(me, DisplayDatesActivity.class);

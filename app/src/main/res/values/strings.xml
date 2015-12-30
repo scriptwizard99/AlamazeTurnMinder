@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">AlamazeTurnMinder</string>
+    <string name="app_name">Alamaze Turn Minder</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_display_dates">DisplayDatesActivity</string>
+    <string name="title_activity_display_dates">Alamaze Turn Due Dates</string>
     <string name="orders_url">http://fallofromegame.com/alamazeorders/orders</string>
     <string name="results_url">http://fallofromegame.com/alamazeorders/results</string>
+    <string name="master_url">http://fallofromegame.com/alamazeorders/security.txt</string>
     <string name="no_network_connection">No network connection available.</string>
+    <string name="title_activity_oclogin">Refresh Game List</string>
+    <string name="title_activity_refresh_games">Active Games</string>
 </resources>
