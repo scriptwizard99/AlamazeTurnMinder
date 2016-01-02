@@ -89,7 +89,7 @@ public class PageGetter {
         int bytesLeft = len;
         int bytesTotal = 0;
         while (bytesTotal < len ) {
-            Log.d("READIT", "br="+bytesRead+ " bt=" + bytesTotal + " bl=" + bytesLeft);
+            //Log.d("READIT", "br="+bytesRead+ " bt=" + bytesTotal + " bl=" + bytesLeft);
             bytesRead = reader.read(buffer, bytesTotal, bytesLeft);
             bytesTotal += bytesRead;
             bytesLeft -= bytesRead;

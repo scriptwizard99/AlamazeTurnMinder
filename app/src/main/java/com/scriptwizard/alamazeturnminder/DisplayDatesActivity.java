@@ -41,6 +41,7 @@ public class DisplayDatesActivity extends AppCompatActivity {
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
                 if (networkInfo != null && networkInfo.isConnected()) {
+                    text.setText("\nGathering information from the Alamaze site...\n\n");
                     new InfoGetterTask(me, text).execute();
                 } else {
                     text.setText(getString(R.string.no_network_connection));

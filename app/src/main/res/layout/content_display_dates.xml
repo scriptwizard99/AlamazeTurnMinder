@@ -8,6 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:fadeScrollbars="false"
+    android:scrollbars="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.scriptwizard.alamazeturnminder.DisplayDatesActivity"
     tools:showIn="@layout/activity_display_dates">
@@ -15,7 +17,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="New Text"
+        android:text="Hit button to see due dates"
         android:id="@+id/displayDatesTextView"
         android:layout_above="@+id/refreshDatesButton"
         android:layout_alignParentLeft="false"
@@ -26,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Refresh"
+        android:text="Show Dates"
         android:id="@+id/refreshDatesButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

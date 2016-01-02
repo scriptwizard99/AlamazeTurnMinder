@@ -42,7 +42,7 @@
         <activity
             android:name=".RefreshGamesActivity"
             android:label="@string/title_activity_refresh_games"
-            android:parentActivityName=".OCLoginActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
